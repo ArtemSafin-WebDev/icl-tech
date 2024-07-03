@@ -1,0 +1,15 @@
+:root {
+  --primary-color: #fb0f1d;
+  --text-color: #161616;
+  --inter: "Inter", sans-serif;
+  --bg: #f5f5f5;
+  --manrope: "Manrope", sans-serif;
+  --content-padding: 1rem;
+  --container-width: 166rem;
+  --side-padding: 5rem;
+  --primary-color-hover: #fb2734;
+
+  @include breakpoint(mobile) {
+    --content-padding: 1.6rem;
+  }
+}

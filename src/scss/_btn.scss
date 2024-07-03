@@ -1,0 +1,40 @@
+.btn {
+  padding: 2.6rem 3.2rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 120%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: var(--manrope);
+  color: white;
+  transition: color 0.2s, background-color 0.2s;
+  background-color: var(--primary-color);
+  align-self: flex-start;
+  text-align: center;
+  border-radius: 1.6rem;
+  display: block;
+
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--primary-color-hover);
+    }
+  }
+
+  @include breakpoint(mobile) {
+    align-self: stretch;
+    padding: 2.3rem 4rem;
+    border-radius: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 120%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}

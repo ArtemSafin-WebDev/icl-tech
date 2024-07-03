@@ -1,0 +1,334 @@
+.solutions {
+  @include blockWrapper;
+  margin-bottom: 12rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 6.4rem;
+  }
+}
+
+.solutions__content {
+  @include blockContent;
+
+  @include breakpointMF(small-tablet) {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-gap: 0.8rem;
+    padding: 0 var(--side-padding);
+  }
+}
+
+.solutions__small-heading {
+  @include breakpoint(mobile) {
+    margin-bottom: 2rem;
+  }
+}
+
+.solutions__wrapper {
+  grid-column: 3 / -1;
+}
+
+.solutions__large-heading {
+  margin-bottom: 5.6rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 3.2rem;
+  }
+}
+
+.solutions__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 0.8rem;
+  grid-auto-rows: 1fr;
+  grid-auto-flow: dense;
+
+  @include breakpoint(mobile) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 0.4rem;
+    grid-auto-rows: auto;
+  }
+}
+
+.solutions__list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.solutions__list-item--large {
+  grid-row: span 2;
+
+  @include breakpoint(mobile) {
+    grid-row: span 1;
+    grid-column: span 2;
+    .solutions__card {
+      min-height: 26rem;
+    }
+  }
+}
+
+.solutions__card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 31rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  overflow: clip;
+  border-radius: 2.4rem;
+  background-color: #fff;
+  color: var(--text-color);
+
+  padding: 3.2rem;
+
+  @include breakpoint(mobile) {
+    padding: 1.6rem;
+    border-radius: 2rem;
+    min-height: 15.2rem;
+  }
+
+  &:link,
+  &:visited {
+    color: var(--text-color);
+  }
+
+  @media (hover: hover) {
+    .solutions__card-more {
+      &:hover {
+        border-color: rgba(#fb0f1d, 0.3);
+      }
+    }
+  }
+
+  &--with-image {
+    background-color: var(--text-color);
+    color: white;
+    &:link,
+    &:visited {
+      color: white;
+    }
+
+    .solutions__card-more {
+      color: white;
+      border-color: rgba(white, 0.3);
+    }
+
+    .solutions__card-more-arrow {
+      border-color: rgba(white, 0.2);
+
+      svg {
+        fill: white;
+      }
+    }
+
+    @media (hover: hover) {
+      .solutions__card-more {
+        &:hover {
+          border-color: rgba(white, 0.6);
+        }
+      }
+    }
+  }
+
+  &--red {
+    background-color: var(--primary-color);
+    color: white;
+    &:link,
+    &:visited {
+      color: white;
+    }
+
+    .solutions__card-more {
+      color: white;
+      border-color: white;
+    }
+
+    .solutions__card-more-arrow {
+      border-color: rgba(white, 0.2);
+
+      svg {
+        fill: white;
+      }
+    }
+    @media (hover: hover) {
+      .solutions__card-more {
+        &:hover {
+          border-color: rgba(white, 0.3);
+        }
+      }
+    }
+  }
+
+  &--black {
+    background-color: var(--text-color);
+    color: white;
+
+    &:link,
+    &:visited {
+      color: white;
+    }
+
+    .solutions__card-more {
+      color: white;
+      border-color: white;
+    }
+
+    .solutions__card-more-arrow {
+      border-color: rgba(white, 0.2);
+
+      svg {
+        fill: white;
+      }
+    }
+
+    @media (hover: hover) {
+      .solutions__card-more {
+        &:hover {
+          border-color: rgba(white, 0.3);
+        }
+      }
+    }
+  }
+}
+
+.solutions__card--image-on-hover {
+  .solutions__card-bg {
+    opacity: 0;
+  }
+
+  @include breakpointMF(small-tablet) {
+    &:hover {
+      color: white;
+      .solutions__card-bg {
+        opacity: 1;
+      }
+      .solutions__card-more {
+        color: white;
+        border-color: rgba(white, 0.3);
+
+        @media (hover: hover) {
+          &:hover {
+            border-color: rgba(white, 0.6);
+          }
+        }
+      }
+
+      .solutions__card-more-arrow {
+        border-color: rgba(white, 0.2);
+
+        svg {
+          fill: white;
+        }
+      }
+    }
+  }
+}
+
+.solutions__card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.solutions__card-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transition: opacity 0.2s;
+}
+
+.solutions__card-bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.solutions__card-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.2rem;
+  line-height: 120%;
+  margin-bottom: 2.4rem;
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 120%;
+    margin-bottom: 1.6rem;
+  }
+}
+
+.solutions__card-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 140%;
+  margin-bottom: 3.2rem;
+  opacity: 0.6;
+  font-family: var(--inter);
+
+  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 120%;
+    margin-bottom: 2rem;
+  }
+}
+
+.solutions__card-more {
+  @include breakpointMF(small-tablet) {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    text-align: center;
+    display: block;
+    align-self: flex-start;
+    padding: 1.25rem 2rem;
+    border-radius: 0.8rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 120%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+  }
+
+  @include breakpoint(mobile) {
+    &:nth-child(2) {
+      margin-top: auto;
+    }
+  }
+}
+
+.solutions__card-more-arrow {
+  display: none;
+
+  @include breakpoint(mobile) {
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 50%;
+    border: 1px solid rgba(#010101, 0.05);
+    transition: border-color 0.2s;
+    display: block;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: #161616;
+      transition: fill 0.2s;
+    }
+  }
+}
+
+.solutions__card-more-text {
+  @include breakpoint(mobile) {
+    display: none;
+  }
+}

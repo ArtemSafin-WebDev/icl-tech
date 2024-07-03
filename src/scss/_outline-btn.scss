@@ -1,0 +1,57 @@
+.outline-btn {
+  display: block;
+  text-align: center;
+  padding: 1.2rem 2rem;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 120%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.8rem;
+  align-self: flex-start;
+  text-align: center;
+  &:link,
+  &:visited {
+    color: var(--primary-color);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: rgba(#fb0f1d, 0.3);
+    }
+  }
+
+  &--white {
+    border-color: white;
+    color: white;
+    &:link,
+    &:visited {
+      color: white;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: rgba(white, 0.3);
+      }
+    }
+  }
+
+  &--semitransparent {
+    border-color: rgba(white, 0.3);
+    color: white;
+    &:link,
+    &:visited {
+      color: white;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: rgba(white, 0.6);
+      }
+    }
+  }
+}
