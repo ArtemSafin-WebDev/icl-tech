@@ -190,6 +190,24 @@
   }
 }
 
+.page-header__phone-wrapper {
+  @include breakpointMF(small-tablet) {
+    position: relative;
+
+    &:hover {
+      .page-header__contacts-dropdown {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity 0.4s, visibility 0.4s;
+      }
+    }
+  }
+
+  @include breakpoint(mobile) {
+    display: contents;
+  }
+}
+
 .page-header__phone {
   flex-shrink: 0;
   width: 1.8rem;
@@ -213,13 +231,13 @@
     }
   }
 
-  @media (hover: hover) {
-    &:hover {
-      svg {
-        fill: var(--primary-color);
-      }
-    }
-  }
+  // @media (hover: hover) {
+  //   &:hover {
+  //     svg {
+  //       fill: var(--primary-color);
+  //     }
+  //   }
+  // }
 }
 
 .page-header__search {
@@ -491,7 +509,7 @@
 .page-header__contacts-dropdown {
   @include breakpointMF(small-tablet) {
     position: absolute;
-    right: -5.9rem;
+    right: -28rem;
     top: 100%;
     width: 42rem;
 
@@ -549,6 +567,12 @@
   letter-spacing: -0.01em;
   text-transform: uppercase;
   margin-bottom: 0.6rem;
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
 
   @include breakpoint(mobile) {
     margin: 0;
