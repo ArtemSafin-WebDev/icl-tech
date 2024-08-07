@@ -199,7 +199,6 @@
   flex-wrap: wrap;
   gap: 0.8rem;
   padding-top: 3.2rem;
-  max-width: 50%;
 
   @include breakpoint(mobile) {
     padding-top: 2.4rem;

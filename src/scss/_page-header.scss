@@ -7,7 +7,7 @@
   @include blockWrapper;
 
   @include breakpointMF(small-tablet) {
-    transition: background-color 0.2s, box-shadow 0.2s;
+    transition: none;
     .fixed-header & {
       position: fixed;
       top: 0;
@@ -95,6 +95,12 @@
   height: auto;
   display: block;
 
+  @include breakpointMF(small-tablet) {
+    .fixed-header & {
+      width: 4.8rem;
+    }
+  }
+
   @include breakpoint(mobile) {
     width: 5.2rem;
   }
@@ -163,6 +169,7 @@
 
     .fixed-header & {
       border-color: rgba(black, 0.05);
+      display: none;
     }
   }
 
@@ -506,6 +513,42 @@
   }
 }
 
+.page-header__write-us-fixed {
+  padding: 1.25rem 2rem;
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 120%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  border-radius: 0.8rem;
+  text-align: center;
+  white-space: nowrap;
+  border: 1px solid var(--primary-color);
+  display: block;
+  transition: color 0.2s, border-color 0.2s;
+  display: none;
+  margin-left: auto;
+  &:link,
+  &:visited {
+    color: var(--primary-color);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: rgba(251, 15, 29, 0.3);
+    }
+  }
+
+  @include breakpointMF(small-tablet) {
+    .fixed-header & {
+      display: block;
+    }
+  }
+}
+
 .page-header__contacts-dropdown {
   @include breakpointMF(small-tablet) {
     position: absolute;
@@ -698,6 +741,15 @@
 
 .page-header__bottom {
   padding: 2.3rem 0;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  @include breakpointMF(small-tablet) {
+    .fixed-header & {
+      padding: 1.2rem 0;
+    }
+  }
 
   @include breakpoint(mobile) {
     display: contents;
@@ -735,6 +787,7 @@
     &:hover {
       .page-header__nav-link {
         color: white;
+        transition: color 0.2s;
         svg {
           transform: rotate(-180deg);
         }
@@ -887,7 +940,9 @@
   }
 
   @include breakpointMF(small-tablet) {
+    transition: none;
     .fixed-header & {
+      transition: none;
       color: var(--text-color);
       &:link,
       &:visited {

@@ -79,7 +79,7 @@
   border-radius: 2.4rem;
   background-color: #fff;
   color: var(--text-color);
-
+  transition: color 0.3s, background-color 0.3s;
   padding: 3.2rem;
 
   @include breakpoint(mobile) {
@@ -123,6 +123,21 @@
     }
 
     @media (hover: hover) {
+      &:hover {
+        background-color: white;
+        color: var(--text-color);
+        .solutions__card-bg {
+          opacity: 0;
+        }
+        .solutions__card-more {
+          border: 1px solid var(--primary-color);
+          color: var(--primary-color);
+          &:hover {
+            border-color: rgba(#fb0f1d, 0.3);
+          }
+        }
+      }
+
       .solutions__card-more {
         &:hover {
           border-color: rgba(white, 0.6);
@@ -236,7 +251,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  transition: opacity 0.2s;
+  transition: opacity 0.3s;
 }
 
 .solutions__card-bg-image {
@@ -297,7 +312,7 @@
     line-height: 120%;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+    transition: color 0.3s, border-color 0.3s, background-color 0.3s;
   }
 
   @include breakpoint(mobile) {
@@ -315,14 +330,14 @@
     height: 3.8rem;
     border-radius: 50%;
     border: 1px solid rgba(#010101, 0.05);
-    transition: border-color 0.2s;
+    transition: border-color 0.3s;
     display: block;
 
     svg {
       width: 100%;
       height: 100%;
       fill: #161616;
-      transition: fill 0.2s;
+      transition: fill 0.3s;
     }
   }
 }
