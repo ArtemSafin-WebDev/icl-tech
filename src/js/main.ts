@@ -5,6 +5,8 @@ import numbersSlider from "./numbersSlider";
 import news from "./news";
 import header from "./header";
 import intro from "./intro";
+import forms from "./forms";
+import modals from "./modals";
 
 document.addEventListener("DOMContentLoaded", () => {
   footer();
@@ -12,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   news();
   header();
   intro();
+  forms();
+  modals();
 });
 
 window.addEventListener("load", () => {

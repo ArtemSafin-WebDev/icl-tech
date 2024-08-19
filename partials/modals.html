@@ -1,0 +1,81 @@
+<div class="modal js-modal" id="callback-modal">
+    <div class="modal__inner">
+        <button class="modal__close js-close-modal" type="button">
+            <svg width="14" height="14" aria-hidden="true">
+                <use xlink:href="#modal-close"></use>
+            </svg>
+        </button>
+        <h3 class="modal__heading">
+            Написать нам
+        </h3>
+        <form action="/" method="POST" class="modal__form js-form-validation" id="callback-form">
+            <div class="modal__form-fields">
+                <div class="modal__form-field">
+                    <label class="modal__form-label">
+                        <input type="text" class="modal__form-input" required="" placeholder="Имя и Фамилия">
+                        <span class="modal__form-label-text">
+                            Имя и Фамилия
+                        </span>
+                    </label>
+                </div>
+                <div class="modal__form-field">
+                    <label class="modal__form-label">
+                        <input type="email" class="modal__form-input" required="" placeholder="Электронная почта">
+                        <span class="modal__form-label-text">
+                            Электронная почта
+                        </span>
+                    </label>
+                </div>
+                <div class="modal__form-field">
+                    <label class="modal__form-label">
+                        <input type="tel" class="modal__form-input" required="" placeholder="Телефон">
+                        <span class="modal__form-label-text">
+                            Телефон
+                        </span>
+                    </label>
+                </div>
+                <div class="modal__form-field">
+                    <label class="modal__form-label">
+                        <input type="text" class="modal__form-input" required="" placeholder="Организация">
+                        <span class="modal__form-label-text">
+                            Организация
+                        </span>
+                    </label>
+                </div>
+                <div class="modal__form-field">
+                    <label class="modal__form-label">
+                        <input type="text" class="modal__form-input" required="" placeholder="Город">
+                        <span class="modal__form-label-text">
+                            Город
+                        </span>
+                    </label>
+                </div>
+                <div class="modal__form-field">
+                    <label class="modal__form-label">
+                        <input type="text" class="modal__form-input" placeholder="Сообщение">
+                        <span class="modal__form-label-text">
+                            Сообщение
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <button class="modal__form-submit" type="submit">
+                Отправить
+            </button>
+            <div class="modal__form-policy">
+                <label class="modal__form-policy-checkbox">
+                    <input type="checkbox" name="policy" value="Y" class="modal__form-policy-checkbox-input"
+                        required="">
+                    <span class="modal__form-policy-checkbox-mark">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#checkmark"></use>
+                        </svg>
+                    </span>
+                    <span class="modal__form-policy-checkbox-text">
+                        Я даю согласие на обработку <a href="#">персональных данных</a>
+                    </span>
+                </label>
+            </div>
+        </form>
+    </div>
+</div>
