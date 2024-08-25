@@ -25,7 +25,7 @@ export default function intro() {
     const nextArrow = element.querySelector<HTMLElement>(".intro__arrow--next");
 
     let autoplayDisabled = false;
-    if (!mainContainer || !bgContainer) return;
+    if (!mainContainer) return;
     nextArrow?.classList.add("autoplay-enabled");
 
     const setActiveBullet = (index: number) => {
@@ -80,20 +80,26 @@ export default function intro() {
       },
     });
 
-    const bgInstance = new Swiper(bgContainer, {
-      speed: 600,
-      effect: "fade",
-      fadeEffect: {
-        crossFade: false,
-      },
-      loop: true,
-      modules: [Controller, EffectFade],
-    });
+    let bgInstance: Swiper | null = null;
+
+    if (bgContainer) {
+      bgInstance = new Swiper(bgContainer, {
+        speed: 600,
+        effect: "fade",
+        fadeEffect: {
+          crossFade: false,
+        },
+        loop: true,
+        modules: [Controller, EffectFade],
+      });
+    }
 
     mainInstance.init();
 
-    mainInstance.controller.control = bgInstance;
-    bgInstance.controller.control = mainInstance;
+    if (bgInstance) {
+      mainInstance.controller.control = bgInstance;
+      bgInstance.controller.control = mainInstance;
+    }
 
     nextArrow?.addEventListener("click", (event) => {
       event.preventDefault();
