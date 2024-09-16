@@ -923,12 +923,12 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   gap: 1.2rem;
-  color: rgba(white, 0.5);
+  color: rgba(white, 0.7);
   transition: color 0.2s;
 
   &:link,
   &:visited {
-    color: rgba(white, 0.5);
+    color: rgba(white, 0.7);
   }
 
   svg {
@@ -992,7 +992,7 @@
     font-weight: 300;
     font-size: 1rem;
     line-height: 130%;
-    color: rgba(white, 0.5);
+    color: rgba(white, 0.7);
     display: block;
     margin-right: 2rem;
     position: relative;

@@ -114,6 +114,27 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0s linear 0.4s;
+
+  .production__list-item--wide & {
+    opacity: 1;
+    visibility: inherit;
+  }
+
+  @media (hover: hover) {
+    .production__card:hover & {
+      opacity: 1;
+      visibility: inherit;
+      transition: opacity 0.4s, visibility 0.4s;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    opacity: 1;
+    visibility: inherit;
+  }
 }
 
 .production__card-icon {
@@ -121,10 +142,25 @@
   height: 8rem;
   object-fit: contain;
   margin-bottom: auto;
+  transition: filter 0.4s;
+
+  @media (hover: hover) {
+    .production__list-item:not(.production__list-item--wide)
+      .production__card:not(.production__card--red):hover
+      & {
+      filter: invert(100%);
+    }
+  }
 
   @include breakpoint(mobile) {
     width: 4.8rem;
     height: 4.8rem;
+
+    .production__list-item:not(.production__list-item--wide)
+      .production__card:not(.production__card--red)
+      & {
+      filter: invert(100%);
+    }
   }
 }
 
@@ -136,6 +172,7 @@
   font-size: 4rem;
   line-height: 120%;
   color: #161616;
+  transition: color 0.2s;
 
   @include breakpoint(mobile) {
     font-style: normal;
@@ -150,6 +187,16 @@
   .production__card--white & {
     color: white;
   }
+
+  @media (hover: hover) {
+    .production__card:hover & {
+      color: white;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    color: white;
+  }
 }
 
 .production__card-text {
@@ -160,6 +207,7 @@
   color: rgba(#161616, 0.6);
   max-width: 38rem;
   font-family: var(--inter);
+  transition: color 0.2s;
 
   @include breakpoint(mobile) {
     max-width: none;
@@ -173,6 +221,16 @@
   }
 
   .production__card--white & {
+    color: rgba(white, 0.6);
+  }
+
+  @media (hover: hover) {
+    .production__card:hover & {
+      color: rgba(white, 0.6);
+    }
+  }
+
+  @include breakpoint(mobile) {
     color: rgba(white, 0.6);
   }
 }
@@ -223,9 +281,22 @@
   line-height: 120%;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--primary-color);
-  display: block;
 
+  display: block;
+  transition: color 0.2s, border-color 0.2s;
+  border-color: white;
+  color: white;
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+  }
   @include breakpoint(mobile) {
     padding: 0.65rem 0.8rem;
     border-radius: 0.6rem;
@@ -235,19 +306,5 @@
     line-height: 120%;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-  }
-  &:link,
-  &:visited {
-    color: var(--primary-color);
-  }
-
-  .production__card--red &,
-  .production__card--white & {
-    border-color: white;
-    color: white;
-    &:link,
-    &:visited {
-      color: white;
-    }
   }
 }

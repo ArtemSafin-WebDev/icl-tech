@@ -238,7 +238,8 @@
 }
 
 .news__arrows {
-  margin-top: auto;
+  margin-top: 112%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
   gap: 1rem;
