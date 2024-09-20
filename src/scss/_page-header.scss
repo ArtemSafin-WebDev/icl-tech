@@ -200,7 +200,8 @@
 .page-header__phone-wrapper {
   @include breakpointMF(small-tablet) {
     position: relative;
-
+    display: flex;
+    flex-direction: column;
     &:hover {
       .page-header__contacts-dropdown {
         opacity: 1;
