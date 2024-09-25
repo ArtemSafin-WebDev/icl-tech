@@ -220,7 +220,7 @@
   font-weight: 300;
   font-size: 1.8rem;
   line-height: 130%;
-  max-width: 31rem;
+  max-width: 51rem;
   margin-bottom: 8rem;
 
   @include breakpoint(mobile) {
@@ -287,6 +287,8 @@
 }
 
 .intro__main-slider-card-link {
+  background-color: #e00c18;
+
   @include breakpoint(mobile) {
     order: 50;
     align-self: stretch;
